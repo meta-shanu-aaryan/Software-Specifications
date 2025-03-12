@@ -11,7 +11,7 @@ import java.util.Scanner;
 class StringOperator {
 
     /**
-     * To compare two strings
+     * To compare two strings and return
      * 
      * @param s1 String 1
      * @param s2 string 2 for which comparision is done
@@ -28,8 +28,8 @@ class StringOperator {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            return -1;
         }
-        return -1;
     }
 
     /**
@@ -130,9 +130,11 @@ public class StringOperation {
                 case 1:
                     System.out.println("Enter the First String:- ");
                     String str1 = sc.nextLine();
-                    System.out.println();
+                    sc.next();
+                    // System.out.println();
                     System.out.println("Enter the Second String:- ");
                     String str2 = sc.nextLine();
+                    sc.next();
                     int equal = so.compareString(str1, str2);
                     if (equal == 1) {
                         System.out.println("Both are equal");
@@ -145,18 +147,23 @@ public class StringOperation {
 
                 case 2:
                     System.out.println("Enter the string:-");
-                    String str = sc.nextLine();
+                    String str = "";
+                    sc.nextLine();
+                    str = sc.nextLine();
+
                     System.out.println("Reversal of string " + str + " is " + so.reverseString(str));
                     break;
 
                 case 3:
                     System.out.println("Enter the String:-");
+                    sc.nextLine();
                     str = sc.nextLine();
                     System.out.println("Case Switched Output:- " + so.caseSwitch(str));
                     break;
 
                 case 4:
                     System.out.println("Enter the string to find longest word in it");
+                    sc.nextLine();
                     str = sc.nextLine();
                     System.out.println("The longest word is " + so.largestWord(str));
                     break;
